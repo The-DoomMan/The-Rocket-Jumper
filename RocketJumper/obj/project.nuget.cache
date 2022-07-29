@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gq5b/qSRo6Ohr2stkZ83B80rHnKcbcwYoJBOStw1NDsvAr/OXfKtvjAu/j4Nln4zBD6qQA4PvwTrvDhRht+iYA==",
+  "dgSpecHash": "A9CSX0QkisLsiQyzuPZs8MBmutt+c6ncaDZq32sD0AygfC/k+ktgfQ7KzQ+BBm8UuQlMBL4EHE7Fst2b7wKaMQ==",
   "success": true,
-  "projectFilePath": "E:\\ultrakill mods\\RocketJumper\\RocketJumper\\RocketJumper\\RocketJumper.csproj",
+  "projectFilePath": "E:\\ultrakill mods\\RocketJumper\\The-Rocket-Jumper\\RocketJumper\\RocketJumper.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\acer\\.nuget\\packages\\bepinex.analyzers\\1.0.8\\bepinex.analyzers.1.0.8.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\bepinex.baselib\\5.4.20\\bepinex.baselib.5.4.20.nupkg.sha512",

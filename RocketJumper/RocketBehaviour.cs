@@ -36,10 +36,7 @@ namespace RocketJumper
                 GameObject.FindGameObjectWithTag("GunControl").GetComponent<EventHandler>().blastsource = "RocketJumper";
             }
             GameObject IP = Instantiate<GameObject>(ImpactPart, transform.position, Quaternion.identity);
-            IP.AddComponent<RemoveOnTime>();
-            IP.GetComponent<RemoveOnTime>().time = 1f;
-            IP.GetComponent<RemoveOnTime>().useAudioLength = false;
-            IP.GetComponent<RemoveOnTime>().randomizer = 0f;
+            EventHandler.RemoveInTime(IP, 1f, 0, false);
             IP.transform.parent = null;
             ImpactSphere = Plugin.RocketBundle.LoadAsset<GameObject>("ImpSphere");
             GameObject ImpSphere = Instantiate<GameObject>(ImpactSphere, transform.position, Quaternion.identity);
@@ -80,10 +77,7 @@ namespace RocketJumper
                     GameObject.FindGameObjectWithTag("GunControl").GetComponent<EventHandler>().blastsource = "RocketJumper";
                 }
                 GameObject IP = Instantiate<GameObject>(ImpactPart, transform.position, Quaternion.identity);
-                IP.AddComponent<RemoveOnTime>();
-                IP.GetComponent<RemoveOnTime>().time = 1f;
-                IP.GetComponent<RemoveOnTime>().useAudioLength = false;
-                IP.GetComponent<RemoveOnTime>().randomizer = 0f;
+                EventHandler.RemoveInTime(IP, 1f, 0, false);
                 IP.transform.parent = null;
                 ImpactSphere = Plugin.RocketBundle.LoadAsset<GameObject>("ImpSphere");
                 GameObject ImpSphere = Instantiate<GameObject>(ImpactSphere, transform.position, Quaternion.identity);

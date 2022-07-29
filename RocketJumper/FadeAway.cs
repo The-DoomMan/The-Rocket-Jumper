@@ -15,10 +15,10 @@ namespace RocketJumper
         {
             transform.GetComponentInChildren<Renderer>().materials[0].color = Vector4.Lerp(transform.GetComponentInChildren<Renderer>().materials[0].color, new Vector4(1, 1, 1, 0), 5f * Time.deltaTime);
             transform.localScale = Vector3.Slerp(transform.localScale, Fullscale, 5f * Time.deltaTime);
-            if(transform.localScale == Fullscale)
+            if (transform.localScale == Fullscale)
             {
                 Destroy(transform.gameObject);
-            }    
+            }
         }
     }
 }

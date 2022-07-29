@@ -18,10 +18,7 @@ namespace RocketJumper
         {
             GameObject aud = Instantiate<GameObject>(new GameObject(), Pos, Quaternion.identity);
             aud.transform.parent = null;
-            aud.AddComponent<RemoveOnTime>();
-            aud.GetComponent<RemoveOnTime>().time = 5f;
-            aud.GetComponent<RemoveOnTime>().useAudioLength = false;
-            aud.GetComponent<RemoveOnTime>().randomizer = 0f;
+            RemoveInTime(aud, 5f, 0, false);
             aud.AddComponent<AudioSource>();
             aud.GetComponent<AudioSource>().clip = clip;
             aud.GetComponent<AudioSource>().maxDistance = Maxdistance;
@@ -30,18 +27,26 @@ namespace RocketJumper
             aud.GetComponent<AudioSource>().Play();
         }
 
+        public static void RemoveInTime(GameObject gObject, float Time, float random, bool useaudilenght)
+        {
+            gObject.AddComponent<RemoveOnTime>();
+            gObject.GetComponent<RemoveOnTime>().time = Time;
+            gObject.GetComponent<RemoveOnTime>().useAudioLength = useaudilenght;
+            gObject.GetComponent<RemoveOnTime>().randomizer = random;
+        }
+
         void Update()
         {
-            if(!Camera)
+            if (!Camera)
             {
                 Camera = GameObject.FindGameObjectWithTag("MainCamera");
                 Puncher = Camera.GetComponentInChildren<FistControl>().gameObject;
             }
-            if(Puncher && blastsource == "RocketJumper")
+            if (Puncher && blastsource == "RocketJumper")
             {
-                if(Puncher.GetComponentInChildren<Punch>().type == FistType.Standard)
+                if (Puncher.GetComponentInChildren<Punch>().type == FistType.Standard)
                     typeof(Punch).GetField("damage", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(Puncher.GetComponentInChildren<Punch>(), 3f);
-                else if(Puncher.GetComponentInChildren<Punch>().type == FistType.Heavy)
+                else if (Puncher.GetComponentInChildren<Punch>().type == FistType.Heavy)
                     typeof(Punch).GetField("damage", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(Puncher.GetComponentInChildren<Punch>(), 7.5f);
             }
             else if (Puncher && blastsource != "RocketJumper")

@@ -25,12 +25,12 @@ namespace RocketJumper
 
         void Update()
         {
-            if(!weapongiven && RocketBundle)
+            if (!weapongiven && RocketBundle)
             {
                 GiveRocketJumper();
                 weapongiven = true;
             }
-            if(!checkgun())
+            if (!checkgun())
             {
                 weapongiven = false;
             }
@@ -79,6 +79,7 @@ namespace RocketJumper
                 RJ.Fire = RocketBundle.LoadAsset<AudioClip>("Fire");
                 RJ.Impact = RocketBundle.LoadAsset<AudioClip>("Impact");
                 RJ.FirePoint = RJ.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).transform;
+                RJ.FirePoint.transform.localPosition = new Vector3(RJ.FirePoint.transform.localPosition.x, -0.05f, 0);
                 RLObject.GetComponent<WeaponIcon>().weaponIcon = RocketBundle.LoadAsset<Sprite>("Icon");
                 RLObject.GetComponent<WeaponIcon>().glowIcon = RocketBundle.LoadAsset<Sprite>("IconGlow");
                 gControl.GetComponent<GunControl>().allWeapons.Add(RLObject);
